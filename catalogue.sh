@@ -36,7 +36,7 @@ dnf module enable nodejs:18 -y &>> $LOGFILE
 VALIDATE $? "Enable Nodejs"
 
 dnf install nodejs -y &>> $LOGFILE
-VALIDTAE $? "Insatlling Nodejs"
+VALIDATE $? "Insatlling Nodejs"
 
 useradd roboshop &>> $LOGFILE   
 VALIDATE $? "Adding roboshop user"
@@ -45,7 +45,7 @@ mkdir /app &>> $LOGFILE
 VALIDATE $? "Cretaing ap directory"
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
-VALDIATE $? "Downloading catalogue application"
+VALIDATE $? "Downloading catalogue application"
 
 cd /app &>> $LOGFILE
 
@@ -59,7 +59,7 @@ cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.s
 VALIDATE $? "Coping catalogue services"
 
 systemctl daemon-reload &>> $LOGFILE
-VALDIATE $? "catalogie deamon reload"
+VALIDATE $? "catalogie deamon reload"
 
 systemctl enable catalogue &>> $LOGFILE
 VALIDATE $? "catalogue enable "
