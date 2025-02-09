@@ -30,7 +30,7 @@ else
 fi # fi means reverse of if, indicating condition end
 
 dnf module disable nodejs -y &>> $LOGFILE
-VALIDTAE $? "Disable nodejs"
+VALIDATE $? "Disable nodejs"
 
 dnf module enable nodejs:18 -y &>> $LOGFILE
 VALIDATE $? "Enable Nodejs"
@@ -38,7 +38,7 @@ VALIDATE $? "Enable Nodejs"
 dnf install nodejs -y &>> $LOGFILE
 VALIDTAE $? "Insatlling Nodejs"
 
-useradd roboshop &>> $LOGFILE
+useradd roboshop &>> $LOGFILE   
 VALIDATE $? "Adding roboshop user"
 
 mkdir /app &>> $LOGFILE
