@@ -40,7 +40,7 @@ systemctl enable mongod &>> $LOGFILE
 VALIDATE $? "Enableing monogd"
 
 systemctl start mongod &>> $LOGFILE
-VALDIATE $? "starting mongod"
+VALIDATE $? "starting mongod"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
 
