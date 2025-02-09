@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+
 ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -33,16 +33,23 @@ cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 VALIDATE $? "Copied MongoDB Repo"
 
-dnf install mongodb-org -y  &>> $LOGFILE
-VALIDATE $? "insatlling monog-org"
+dnf install mongodb-org -y &>> $LOGFILE
+
+VALIDATE $? "Installing MongoDB"
 
 systemctl enable mongod &>> $LOGFILE
-VALIDATE $? "Enableing monogd"
+
+VALIDATE $? "Enabling MongoDB"
 
 systemctl start mongod &>> $LOGFILE
-VALIDATE $? "starting mongod"
+
+VALIDATE $? "Starting MongoDB"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
 
+VALIDATE $? "Remote access to MongoDB"
+
 systemctl restart mongod &>> $LOGFILE
-VALIDATE $? "Restarting Mongod"
+
+VALIDATE $? "Restarting MongoDB"
+
