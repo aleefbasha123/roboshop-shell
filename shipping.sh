@@ -72,7 +72,7 @@ VALIDATE $? "starting"
 dnf install mysql -y
 VALIDATE $? "Installing mysql"
 
-mysql -h 172.31.34.154 -uroot -pRoboShop@1 < /app/schema/shipping.sql 
+mysql -h 172.31.34.154 -uroot -pRoboShop@1 < /app/db/schema.sql 
 VALIDATE $? "loading schema file"
 
 systemctl restart shipping
