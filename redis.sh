@@ -12,7 +12,7 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "script stareted executing at $TIMESTAMP" &>> $LOGFILE
 
-VALIDATE(){
+VALIDATE(){ 
     if [ $1 -ne 0 ]
     then
         echo -e "$2 ... $R FAILED $N"
@@ -31,7 +31,7 @@ else
 fi # fi means reverse of if, indicating condition end
 
 
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y --nobest
 
 VALIDATE $? "Installing Remi release"
 
