@@ -61,7 +61,7 @@ VALIDATE $? "Unzipping user application"
 npm install  &>> $LOGFILE
 VALIDATE $? "Insatting depedences"
 
-cp /home/centos/roboshop-shell/user.service vim /etc/systemd/system/user.service &>> $LOGFILE
+cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service &>> $LOGFILE
 VALIDATE $? "Coping user services"
 
 systemctl daemon-reload &>> $LOGFILE
