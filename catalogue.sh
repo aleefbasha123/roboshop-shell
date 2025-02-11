@@ -80,7 +80,7 @@ VALIDATE $? "coping mongo repo"
 dnf install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? "insatlling mongodb-org-shell"
 
-mongo --host 172.31.33.22 </app/schema/catalogue.js &>> $LOGFILE
+mongo --host 172.31.38.49 </app/schema/catalogue.js &>> $LOGFILE
 VALIDATE $? "Loading catalogue data inot mongobd"
 
 
