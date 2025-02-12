@@ -79,6 +79,6 @@ VALIDATE $? "Coping mongo repo"
 dnf install mongodb-org-shell -y
 VALIDATE $? "Installing Mongodb-org-shell"
 
-mongo --host 172.31.34.114 </app/schema/user.js
+mongo --host 172.31.44.139 </app/schema/user.js
 VALIDATE $? "Loading schema file"
 
