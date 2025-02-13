@@ -43,6 +43,7 @@ if [ $? -ne 0 ]
 then
    useradd roboshop   
    VALIDATE $? "Creating roboshop user"
+   exit 1
 else 
     echo -e "roboshop user already exist $Y SKIPPING $N"
 fi
@@ -79,6 +80,6 @@ VALIDATE $? "Coping mongo repo"
 dnf install mongodb-org-shell -y
 VALIDATE $? "Installing Mongodb-org-shell"
 
-mongo --host 172.31.41.79 </app/schema/user.js
+mongo --host 172.31.33.226 </app/schema/user.js
 VALIDATE $? "Loading schema file"
 
