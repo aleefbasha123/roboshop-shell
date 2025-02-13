@@ -30,12 +30,12 @@ else
     echo "You are root user"
 fi # fi means reverse of if, indicating condition end
 
-
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y #--skip-broken
+#--skip-broken
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 
 VALIDATE $? "Installing Remi release"
 
-dnf module enable redis:remi-6.2 -y  #--skip-broken
+dnf module enable redis:remi-6.2 -y
 
 VALIDATE $? "enabling redis"
 
