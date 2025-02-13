@@ -31,13 +31,14 @@ else
 fi # fi means reverse of if, indicating condition end
 
 #--skip-broken
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
-
+# dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+dnf module disable redis -y
+dnf module enable redis:7 -y
 VALIDATE $? "Installing Remi release"
 
-dnf module enable redis:remi-6.2 -y
+#dnf module enable redis:remi-6.2 -y
 
-VALIDATE $? "enabling redis"
+#VALIDATE $? "enabling redis"
 
 dnf install redis -y
 
