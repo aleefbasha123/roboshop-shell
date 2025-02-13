@@ -77,7 +77,7 @@ VALIDATE $? "starting catalogue"
 cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "coping mongo repo"
 
-dnf install mongodb-org-shell -y &>> $LOGFILE
+dnf install mongodb-mongosh -y &>> $LOGFILE
 VALIDATE $? "insatlling mongodb-org-shell"
 
 mongo --host 172.31.32.87 </app/schema/catalogue.js &>> $LOGFILE
