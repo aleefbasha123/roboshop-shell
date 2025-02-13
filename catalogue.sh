@@ -61,7 +61,7 @@ VALIDATE $? "Unzipping catalogue application"
 npm install  &>> $LOGFILE
 VALIDATE $? "Insatting depedences"
 
-cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /home/ec2-user/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 VALIDATE $? "Coping catalogue services"
 
 systemctl daemon-reload &>> $LOGFILE
@@ -74,13 +74,13 @@ systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "starting catalogue"
 
 
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/ec2-ser/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "coping mongo repo"
 
 dnf install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? "insatlling mongodb-org-shell"
 
-mongo --host 172.31.33.226 </app/schema/catalogue.js &>> $LOGFILE
+mongo --host 172.31.32.87 </app/schema/catalogue.js &>> $LOGFILE
 VALIDATE $? "Loading catalogue data inot mongobd"
 
 #mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
