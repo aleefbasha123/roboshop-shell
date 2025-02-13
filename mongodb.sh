@@ -29,11 +29,11 @@ else
     echo "You are root user"
 fi # fi means reverse of if, indicating condition end
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 VALIDATE $? "Copied MongoDB Repo"
  #&>> $LOGFILE
-dnf install mongodb.org -y 
+dnf install mongodb-org -y 
 
 VALIDATE $? "Installing MongoDB"
 
