@@ -74,7 +74,7 @@ systemctl start catalogue &>> $LOGFILE
 VALIDATE $? "starting catalogue"
 
 
-cp /home/ec2-ser/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? "coping mongo repo"
 
 dnf install mongodb-org-shell -y &>> $LOGFILE
